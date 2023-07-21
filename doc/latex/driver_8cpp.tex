@@ -1,0 +1,147 @@
+\hypertarget{driver_8cpp}{}\section{src/driver.cpp File Reference}
+\label{driver_8cpp}\index{src/driver.\+cpp@{src/driver.\+cpp}}
+
+
+\hyperlink{classDriver}{Driver} construction.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}driver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}database.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}user.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}transaction.\+h\char`\"{}}\newline
+Include dependency graph for driver.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{driver_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{driver_8cpp_a7fdc53d1cbb1756de7f8964786ad2fe2}\label{driver_8cpp_a7fdc53d1cbb1756de7f8964786ad2fe2}} 
+std\+::string {\bfseries encrypt} (std\+::string pw, std\+::string salt)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classDriver}{Driver} construction. 
+
+Sets the driver\textquotesingle{}s C\+PC number.
+
+Validates a driver\textquotesingle{}s C\+PC number.
+
+Gets the driver\textquotesingle{}s driving licence ID number.
+
+Sets the vehicle registration.
+
+Gets the vehicle registration.
+
+Signs up user as a driver.
+
+Finds the nearest driver.
+
+\hyperlink{classDriver}{Driver()}
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+Loads user database \begin{DoxyVerb}@param[in] None
+
+@param[out] None
+
+@return None\end{DoxyVerb}
+
+
+Find\+Nearest\+Driver()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+The function uses the driver database to find a driver in the same city, province and country. \begin{DoxyVerb}@param[in] std::string city,std::string province,std::string country
+
+@param[out] None
+
+@return Driver object containing information about the driver\end{DoxyVerb}
+
+
+Sign\+Up\+As\+Driver()
+
+Matthew Boote
+
+Reads user information from cargo owner object into database \begin{DoxyVerb}@param[in] Driver driver
+
+@param[out] None
+
+@return boolean\end{DoxyVerb}
+
+
+Get\+Registration()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string vehicleregistration
+\end{DoxyReturn}
+Set\+Registration()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classDriver}{Driver}} & driver\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean
+\end{DoxyReturn}
+Get\+Driving\+Licence\+I\+D()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classDriver}{Driver}} & driver\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean
+\end{DoxyReturn}
+Validate\+C\+P\+C()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+Checks the C\+PC format and looks up the number in the C\+PC database \begin{DoxyVerb}@param[in] Driver driver
+
+@param[out] None
+
+@return boolean\end{DoxyVerb}
+
+
+Set\+C\+P\+C()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+\begin{DoxyVerb}@param[in] Driver driver
+
+@param[out] None
+
+@return boolean\end{DoxyVerb}

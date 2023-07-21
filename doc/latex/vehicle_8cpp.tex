@@ -1,0 +1,212 @@
+\hypertarget{vehicle_8cpp}{}\section{src/vehicle.cpp File Reference}
+\label{vehicle_8cpp}\index{src/vehicle.\+cpp@{src/vehicle.\+cpp}}
+
+
+\hyperlink{classVehicle}{Vehicle} constructor.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}vehicle.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}database.\+h\char`\"{}}\newline
+Include dependency graph for vehicle.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{vehicle_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{vehicle_8cpp_ae2fa874a15922b9f12b4f26e0905f526}\label{vehicle_8cpp_ae2fa874a15922b9f12b4f26e0905f526}} 
+\hyperlink{classDatabase}{Database} $\ast$ {\bfseries Vehicle\+Database}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classVehicle}{Vehicle} constructor. 
+
+Validates vehicle registration.
+
+Sets the vehicle height.
+
+Sets the vehicle weight.
+
+Sets the vehicle type.
+
+Sets the vehicle registration.
+
+Get\+Height.
+
+Get vehicle weight.
+
+Gets the vehicle type.
+
+Gets the vehicle registration number.
+
+Adds a vehicle to the vehicle database.
+
+\hyperlink{classVehicle}{Vehicle()}
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+Creates a vehicle object. Loads the vehicle database \begin{DoxyVerb}@param[in] None
+
+@param[out] None
+
+@return None\end{DoxyVerb}
+
+
+Add\+Vehicle()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classVehicle}{Vehicle}} & vehicle\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean
+\end{DoxyReturn}
+Get\+Registration()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Get\+Vehicle\+Type()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & cname Company name\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Get\+Weight()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double
+\end{DoxyReturn}
+\hyperlink{classUser}{User()}
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+Gets the vehicle height \begin{DoxyVerb}@param[in] None
+
+@param[out] None
+
+@return double\end{DoxyVerb}
+
+
+Set\+Registration()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & reg\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Vehicle\+Type()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+The vehicle could be L\+GV, H\+GV or van
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & vt\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Weight()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em int} & wt\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Height()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em int} & ht\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Validate\+Registration()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+The registration format is checked; the format should be in form A\+A\+N\+N\+N\+A\+AA where A is a letter and N is a number.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & regnumber\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}

@@ -1,0 +1,206 @@
+TransportationCompany::DriverMainMenu() {   
+int choice;
+
+ while(1) {
+	//
+	// Menu to ask what they want to do
+	//
+
+	std::cout << "Temporary user interface"  << std::endl;
+	std::cout << std::endl;	
+	std::cout << "1. Sign up as Transportation Company" << std::endl;
+	std::cout << "2. Sign in as Transportation Company" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "Enter choice (1 or 2):";
+	std::cin >> choice;
+
+	switch(choice) {
+         case 1: // Sign up
+     	    Transportation CompanySignUpInterface();
+	    break;
+
+	 case 2: // Sign in  	
+	    while(1) {
+		 authvector=SignInUserInterface();			// get username and password
+
+ 		 hashedpassword=HashPassword(authvector[VECTOR_USERNAME],authvector[VECTOR_PASSWORD]);
+
+		 if(transportationcompany.SignIn(authvector[VECTOR_USERNAME],hashedpassword) == false) {		// sign in
+		  std::cout << invalid << std::endl;
+		 }
+		 else {
+		   break;
+		 }
+	  }
+ 	
+	default:
+ 		std::cout << "Invalid choice" << std::endl; 
+	}
+ }
+
+//  Fall through
+
+//
+// Fall through to main menu
+//
+while(1) {	
+	std::cout << "Temporary user interface (Driver)"  << std::endl;
+	std::cout << std::endl;	
+	std::cout << "1. Display assigned orders" << std::endl;
+	std::cout << "3. Sign out" << std::endl;
+	std::cout << std::endl;
+
+	choice=0;
+        std::cout << "Enter choice (1 or 2):";
+	std::cin >> choice;
+
+	if(choice == 1) {			// Start transaction
+			 TransactionInterface(choice);
+	}
+	else if(choice == 2) { 			 // Display transactions
+			 DisplayTransactions(SHOW_ORDERS_HISTORY); 
+	}	 	
+	else if(choice == 3) { 			 // Display transactions
+			 DisplayTransactions(SHOW_NEW_ORDERS); 
+	}
+	else if(choice == 4) {
+			 std::cout << "Thanks for using" << std::endl;
+	  		 exit(1);
+	}
+ 	else {
+			 std::cout << "Invalid choice" << std::endl; 		
+	}
+    }
+}
+
+
+void DriverUserInterface::DriverSignUpInterface(void) {
+ std::string choice;
+ std::cout << "Sign up as a driver" << std::endl;
+
+ // get user details
+
+ choice="";
+ std::cout << "Enter first name:";
+ std::cin >> choice;
+ 
+driver.SetFirstname(choice);
+ 
+ choice="";
+ std::cout << "Enter surname:";
+ std::cin >> choice;
+ 
+driver.SetSurname(choice);
+
+ choice="";
+ std::cout << "Enter username:";
+ std::cin >> choice;
+ 
+driver.SetUsername(choice);
+
+ choice="";
+ std::cout << "Enter password:";
+ std::cin >> choice;
+
+driver.SetPassword(choice);
+ 
+ choice="";
+ std::cout << "Enter address:";
+ std::cin >> choice;
+ 
+driver.SetAddress(choice);
+ 
+ choice="";
+ std::cout << "Enter postcode:";
+ std::cin >> choice;
+ 
+driver.SetPostcode(choice);
+
+ choice="";
+ std::cout << "Enter phone number:";
+ std::cin >> choice;
+ 
+driver.SetPhone(choice);
+ 
+ choice="";
+ std::cout << "Enter email address:";
+ std::cin >> choice;
+
+driver.SetPhone(choice);
+ 
+driver.SignUpAsCargoOwner(cargoowner);		// Sign up as driver		      	
+driver.SignIn(cargoowner.GetUsername(),cargoowner.GetPassword());
+
+ std::cout << "Sign up successful. Welcome " <<driver.GetUsername() << " " <<driver.GetPassword() << std::endl;
+ MainMenu();
+}
+
+int TransactionActions(int ordernumber) {
+ int choice=0;
+ 
+  while(1) {	
+	std::cout << "Order #"  << ordernumber << std::endl;
+	std::cout << std::endl;	
+	std::cout << "1. Accept this order" << std::endl;
+	std::cout << "2. Reject this order" << std::endl;
+	std::cout << "3. Return to previous menu" << std::endl;
+	std::cout << std::endl;
+
+	choice=0;
+        std::cout << "Enter choice (1,2 or 3):";
+	std::cin >> choice;
+
+	if(choice == 1) {			// Start transaction
+			 AcceptOrder(ordernumber);
+	}
+	else if(choice == 2) { 			 // Display transactions
+
+			 RejectOrder(ordernumber); 
+	
+			 std::cout << "You have rejected order number #" << ordernumber << std::endl;
+			 return(0);
+	}	 	
+	else if(choice == 3) {
+			  return(0);
+	}
+ 	else {
+			 std::cout << "Invalid choice" << std::endl; 		
+	}
+    }
+}
+
+int DriverUserInterface::OrderMenu(int ordernumber) {
+ int choice=0;
+ 
+  while(1) {	
+	std::cout << "MY orders"  << ordernumber << std::endl;
+	std::cout << std::endl;	
+	std::cout << "1. Accept this order" << std::endl;
+	std::cout << "2. Reject this order" << std::endl;
+	std::cout << "3. Return to previous menu" << std::endl;
+	std::cout << std::endl;
+
+	choice=0;
+        std::cout << "Enter choice (1,2 or 3):";
+	std::cin >> choice;
+
+	if(choice == 1) {			// Start transaction
+			 AcceptOrder(ordernumber);
+	}
+	else if(choice == 2) { 			 // Display transactions
+
+			 RejectOrder(ordernumber); 
+	
+			 std::cout << "You have rejected order number #" << ordernumber << std::endl;
+			 return(0);
+	}	 	
+	else if(choice == 3) {
+			  return(0);
+	}
+ 	else {
+			 std::cout << "Invalid choice" << std::endl; 		
+	}
+    }
+}
+

@@ -1,0 +1,17 @@
+System should be usable by drivers and cargo owners and shipping companies 		* Add shipping companies
+Must be able to search for cargo owners and drivers 					
+Must allow users to sign up 								*
+Must allow users to sign in 								*
+Must be able to sign users out 								*
+Must allow for payment 
+Must be able to review transaction history 						*
+It must be able to send messages between the drivers, cargo owners and shipping companies 
+Must be able to place orders 						
+Must be able to select the destination 							*
+The user must join either as a cargo company or driver 					*
+Must calculate the cost of the delivery 		
+Must be able to find the driver or cargo owner that is nearest or most efficient option for delivery 
+The application must have a graphical user interface 
+The application must display notifications of new orders. 
+The driver must be able to accept or reject cargo 
+

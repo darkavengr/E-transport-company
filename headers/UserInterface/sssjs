@@ -1,0 +1,71 @@
+void CargoOwnerUserInterface::DisplayOrderHistory(std::string username) {
+ std::vector<std::string> transaction_vector;
+ int count;
+ std::string filename;
+ Database transactiondatabase;
+ int display_count=0;
+ int orderID=0;
+ int choice;
+
+ filename=username+"_transaction_history.csv";
+ }
+
+ if(transactiondatabase.Load(filename) == false) {
+  std::cout << "BADDDDDDDDDDDDDDDDDDDDDDDDDDDD file\n";
+  exit(1);
+ }
+
+ std::cout << "ID\tFirst Name\tSurname\tDelivery Address\tPost Code\tContact Phone\tContact Email\tDescription" << std::endl;
+
+ do {
+  transaction_vector=transactiondatabase.Find();
+
+  for(count=0;count<transaction_vector.size();count++) {
+   std::cout << transaction_vector[count] << "\t";
+  }
+
+  if(display_count == MAX_ORDER_DISPLAY_COUNT) {			// reached a screen full of orders
+	std::cout << "Enter order ID or press ENTER to see more orders:"  << std::endl;
+	std::cin >> orderID;
+
+        display_count=0;
+	if(orderID != 0) {			// Doing something with the order
+	
+
+	  while(1) {	
+		std::cout << "Order #"  << transaction_vector[0] << std::endl;
+		std::cout << std::endl;	
+		std::cout << "1. Accept this order" << std::endl;
+		std::cout << "2. Reject this order" << std::endl;
+		std::cout << "3. Return to previous menu" << std::endl;
+		std::cout << std::endl;
+
+		choice=0;
+	        std::cout << "Enter choice (1,2 or 3):";
+		std::cin >> choice;
+
+		if(choice == 1) {			// Start transaction
+			 // accept this order
+		}
+		else if(choice == 2) { 			 // Display transactions
+			// reject order
+	
+			 std::cout << "You have rejected order number #" << transaction_vector[0] << std::endl;
+			 return;
+		}	 	
+		else if(choice == 3) {
+			  return;
+		}
+	 	else {
+			 std::cout << "Invalid choice" << std::endl; 		
+		}
+	     }
+           }
+	}
+ 	
+} while(transaction_vector.size() > 0);
+  
+ std::cout << std::endl;
+
+}  
+

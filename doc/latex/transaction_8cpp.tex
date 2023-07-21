@@ -1,0 +1,656 @@
+\hypertarget{transaction_8cpp}{}\section{src/transaction.cpp File Reference}
+\label{transaction_8cpp}\index{src/transaction.\+cpp@{src/transaction.\+cpp}}
+
+
+\hyperlink{classTransaction}{Transaction} constructor.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}transaction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}database.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Message\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}transportationcompany.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$boost/uuid/uuid.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/uuid/uuid\+\_\+io.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/uuid/random\+\_\+generator.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}exception.\+h\char`\"{}}\newline
+Include dependency graph for transaction.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{transaction_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\hyperlink{classTransaction}{Transaction} constructor. 
+
+Sets the driver\textquotesingle{}s name.
+
+Gets the driver\textquotesingle{}s name.
+
+Calculates the cost of delivery.
+
+Calculates the driver and transportation company\textquotesingle{}s commission.
+
+Gets the current location.
+
+Sets the order\textquotesingle{}s city.
+
+Sets the order\textquotesingle{}s province.
+
+Sets the order\textquotesingle{}s comments.
+
+Sets the order\textquotesingle{}s description.
+
+Sets the type of the order.
+
+Sets the order\textquotesingle{}s priority.
+
+Sets the order\textquotesingle{}s contact email address.
+
+Sets the order\textquotesingle{}s contact phone number.
+
+Sets the item\textquotesingle{}s weight.
+
+Sets the order\textquotesingle{}s country.
+
+Sets the order\textquotesingle{}s postcode.
+
+Sets the order\textquotesingle{}s delivery address.
+
+Sets the sender\textquotesingle{}s surname.
+
+Sets the sender\textquotesingle{}s first name.
+
+Sets the sender\textquotesingle{}s name.
+
+Sets the order\textquotesingle{}s ID.
+
+Generates a unique boost U\+U\+ID.
+
+Gets the recipient\textquotesingle{}s country.
+
+Gets the order\textquotesingle{}s recipient city.
+
+Gets the order\textquotesingle{}s recipient province.
+
+Gets the order\textquotesingle{}s comment.
+
+Gets the username of the order\textquotesingle{}s recipient.
+
+Gets the weight of the item.
+
+Gets the total cost of the order.
+
+Gets the order\textquotesingle{}s priority.
+
+Gets the email of the order\textquotesingle{}s recipient.
+
+Gets the goods type of the order (Animals, etc)
+
+Gets the order\textquotesingle{}s description.
+
+Gets the order\textquotesingle{}s sender.
+
+Gets the contact phone number of the order\textquotesingle{}s recipient.
+
+Gets the postcode of the order\textquotesingle{}s recipient.
+
+Gets the address of the order\textquotesingle{}s recipient.
+
+Gets the surname of the order\textquotesingle{}s recipient.
+
+Gets the first name of the order\textquotesingle{}s recipient.
+
+Gets the orders ID.
+
+Finds the next transaction in the order databae.
+
+Changes the order\textquotesingle{}s status.
+
+Cancels an order.
+
+Places an order.
+
+\hyperlink{classTransaction}{Transaction()} \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+Initializes transaction object by loading the database associated with the transaction. \begin{DoxyVerb}@param[in] None
+
+@param[out] None
+
+@return None
+
+@throw General exception  \end{DoxyVerb}
+
+
+Place\+Order() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+This function adds the order to the user\textquotesingle{}s transaction database, finds the nearest transportation company to the user and sends a message to them. \begin{DoxyVerb}@param[in] std::string senderusername,std::string sendercity,std::string senderprovince,std::string sendercountry
+
+@param[out] None
+
+@return boolean
+
+@throw General exception  \end{DoxyVerb}
+
+
+Place\+Order() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+This function deletes the order from the order database. \begin{DoxyVerb}@param[in] std::string senderusername,std::string sendercity,std::string senderprovince,std::string sendercountry
+
+@param[out] None
+
+@return boolean\end{DoxyVerb}
+
+
+Change\+Status() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+This function changes the order status in the order\textquotesingle{}s database entry. Order status can be waiting, on road and delivered. \begin{DoxyVerb}@param[in] uuid orderid,std::string status
+
+@param[out] None
+
+@return boolean
+
+@throw General exception  \end{DoxyVerb}
+
+
+Find\+Next\+Transaction() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+This function returns each order in the database, in sequence. \begin{DoxyVerb}@param[in] None
+
+@param[out] None
+
+@return boolean
+
+@throw Throws error if database entry not found\end{DoxyVerb}
+
+
+Get\+I\+D() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uuid ID
+\end{DoxyReturn}
+Get\+First\+Name() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uuid ID
+\end{DoxyReturn}
+Get\+First\+Name() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Get\+Delivery\+Address() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Get\+Post\+Code() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Get\+Contat\+Phone() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Get\+Sender() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Get\+Priority() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int
+\end{DoxyReturn}
+Get\+Total\+Cost() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+The order is calculated from the distance, weight and the driver and transportation company\textquotesingle{}s commission.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double
+\end{DoxyReturn}
+Get\+Item\+Weight() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double
+\end{DoxyReturn}
+Get\+Recipient\+Username() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Get\+Province() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Get\+Country() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Generate\+I\+D() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+The ID is used as the primary key for the order database
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+I\+D() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+The ID is used as the primary key for the order database
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em uuid} & id\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Sender() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & fname\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Set\+Sender\+First\+Name() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & fname\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Sender\+Surname() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & sname\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Sender() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & address\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Post\+Code() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & pcode\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Sender() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & country\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Weight() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & w\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Contact\+Phone() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & pnumber\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Contact\+Email() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & email\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Priority() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+The priority is from 1-\/3 and determines the speed and cost of the delivery.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & pnumber\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Goods\+Type() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & type\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Description() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & desc\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Coments() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & comments\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Province() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & pnumber\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+City() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & pnumber\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Set\+Location() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$
+\end{DoxyReturn}
+Calculate\+Commission() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$
+\end{DoxyReturn}
+Calculate\+Shipping\+Rates() Calculates the shipping rate for the order
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+The shipping rate is calculated from the distance the order is to travel and the weight of the item.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$
+\end{DoxyReturn}
+Calculate\+Cost\+Of\+Delivery() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+the cost of delivery is (shipping rates+commission)$\ast$priority 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$
+\end{DoxyReturn}
+Get\+Driver\+Name() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+Set\+Driver\+Name() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & drivername\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}

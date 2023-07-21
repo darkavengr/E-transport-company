@@ -1,0 +1,126 @@
+\hypertarget{transportationcompany_8cpp}{}\section{src/transportationcompany.cpp File Reference}
+\label{transportationcompany_8cpp}\index{src/transportationcompany.\+cpp@{src/transportationcompany.\+cpp}}
+
+
+Transportation\+Company constructor.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}user.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}transportationcompany.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}database.\+h\char`\"{}}\newline
+Include dependency graph for transportationcompany.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{transportationcompany_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Transportation\+Company constructor. 
+
+Gets the type of goods the transportation company transports.
+
+Sets the type of goods the transportation company transports.
+
+Finds the nearest transportation company.
+
+Sets the company name.
+
+Signs up as a transportation company.
+
+Signs up as a cargo owner.
+
+Transportation\+Company() \begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+Initializes transportation company object by loading Users database \begin{DoxyVerb}@param[in] None
+
+@param[out] None
+
+@return None\end{DoxyVerb}
+
+
+Sign\+Up\+As\+Transportation Company()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+Reads user information from cargo owner object into database \begin{DoxyVerb}@param[in] Transportation Company cargowner     Cargo owner object
+
+@param[out] None
+
+@return Boolean true or false\end{DoxyVerb}
+
+
+Get\+Company\+Name()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+Reads user information from transportation into database. This function is called from the sign up user interface. \begin{DoxyVerb}@param[in] None
+
+@param[out] None
+
+@return std::string CompanyName\end{DoxyVerb}
+
+
+Set\+Company\+Name()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\+::string} & companyname\\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+Find\+Nearest\+Transportation\+Company()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+Searches the database for a transportation company that is in the same city,province and country \begin{DoxyVerb}@param[in] std::string city,std::string province,std::string country
+
+@param[out] None
+
+@return TransportationCompany object\end{DoxyVerb}
+
+
+Set\+Goods\+Transportation\+Type()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+\begin{DoxyVerb}@param[in] std::string GoodsType
+
+@param[out] None
+
+@return None\end{DoxyVerb}
+
+
+Get\+Goods\+Transportation\+Type()
+
+\begin{DoxyAuthor}{Author}
+Matthew Boote
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em None} & \\
+\hline
+\mbox{\tt out}  & {\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string goodstype 
+\end{DoxyReturn}
